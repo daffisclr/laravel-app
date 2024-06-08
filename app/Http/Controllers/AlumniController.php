@@ -8,6 +8,6 @@ class AlumniController extends Controller
 {
     public function AlumniDashboard (Request $request)
     {
-        return view('alumni.alumni_dashboard');
+        return view('alumni.index');
     }
 }
