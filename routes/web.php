@@ -35,7 +35,13 @@ Route::middleware(['auth', 'role:Alumni'])->group(function(){
 
     // Show Hompage for Alumni
     Route::get('alumni/dashboard', [AlumniController::class, 'AlumniDashboard'])->name('alumni.dashboard');
+
+    // Alumni Logout
+    Route::get('alumni/logout', [AlumniController::class, 'AlumniLogout'])->name('alumni.logout');
 });
 
 // Admin Login
 Route::get('admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+
+// Alumni Login
+Route::get('alumni/login', [AlumniController::class, 'AlumniLogin'])->name('alumni.login');
