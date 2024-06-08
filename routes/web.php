@@ -22,11 +22,20 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::middleware(['auth', 'role:Admin'])->group(function(){
+
+    // Show Homepage for Admin
     Route::get('admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+
+    // Admin Logout
+    Route::get('admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 });
 
 
 Route::middleware(['auth', 'role:Alumni'])->group(function(){
+
+    // Show Hompage for Alumni
     Route::get('alumni/dashboard', [AlumniController::class, 'AlumniDashboard'])->name('alumni.dashboard');
 });
 
+// Admin Login
+Route::get('admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
