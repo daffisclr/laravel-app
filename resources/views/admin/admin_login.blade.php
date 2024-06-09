@@ -31,13 +31,7 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('backend/assets/css/style.css') }}" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 </head>
 
 <body>
@@ -68,14 +62,15 @@
                                         </p>
                                     </div>
 
-                                    <form method="POST" action="{{ route('login') }}" class="row g-3 needs-validation" novalidate>
+                                    <form method="POST" action="{{ route('login') }}" class="row g-3 needs-validation"
+                                        novalidate>
                                         @csrf
                                         <div class="col-12">
                                             <label for="password" class="form-label">Email or NIP or Nomor
                                                 Telpon</label>
                                             <div class="input-group has-validation">
-                                                <input type="text" name="login" class="form-control"
-                                                    id="login" value="{{ old('login') }}" required>
+                                                <input type="text" name="login" class="form-control" id="login"
+                                                    value="{{ old('login') }}" required>
                                                 <div class="invalid-feedback">Mohon masukkan alamat email or NIP or
                                                     Nomor Telpon.</div>
                                             </div>
@@ -83,8 +78,8 @@
 
                                         <div class="col-12">
                                             <label for="password" class="form-label">Password</label>
-                                            <input type="password" name="password" class="form-control"
-                                                id="password" value="__('Password')" required>
+                                            <input type="password" name="password" class="form-control" id="password"
+                                                value="__('Password')" required>
                                             <div class="invalid-feedback">Mohon masukkan password!</div>
                                         </div>
 
@@ -126,6 +121,31 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('backend/assets/js/main.js') }}"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
 
 </body>
 

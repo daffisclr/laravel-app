@@ -1,7 +1,6 @@
 @extends('admin.admin_dashboard')
 @section('admin')
     <main id="main" class="main">
-
         <div class="pagetitle">
             <h1>Profile</h1>
             <nav>
@@ -13,10 +12,10 @@
             </nav>
         </div><!-- End Page Title -->
 
+        @include('_message')
         <section class="section profile">
             <div class="row">
                 <div class="col-xl-12">
-
                     <div class="card">
                         <div class="card-body pt-3">
                             <!-- Bordered Tabs -->
@@ -68,36 +67,38 @@
                                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                                     <!-- Profile Edit Form -->
-                                    <form>
+                                    <form method="POST" action="{{ url('admin_profile/update') }}">
+                                        {{ csrf_field() }}
                                         <div class="row mb-3">
-                                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                                            <label for="name" class="col-md-4 col-lg-3 col-form-label">Nama
+                                                Admin</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="fullName" type="text" class="form-control" id="fullName"
-                                                    value="Kevin Anderson">
+                                                <input name="name" type="text" class="form-control" id="name"
+                                                    value="{{ $getRecord->name }}">
                                             </div>
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                                            <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="email" type="email" class="form-control" id="Email"
-                                                    value="k.anderson@example.com">
+                                                <input name="email" type="email" class="form-control" id="email"
+                                                    value="{{ $getRecord->email }}">
                                             </div>
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="Phone" class="col-md-4 col-lg-3 col-form-label">NIP</label>
+                                            <label for="username" class="col-md-4 col-lg-3 col-form-label">NIP</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="phone" type="text" class="form-control" id="Phone"
-                                                    value="(436) 486-3538 x29071">
+                                                <input name="username" type="number" class="form-control" id="username"
+                                                    value="{{ $getRecord->username }}">
                                             </div>
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                                            <label for="phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="phone" type="text" class="form-control" id="Phone"
-                                                    value="(436) 486-3538 x29071">
+                                                <input name="phone" type="number" class="form-control" id="phone"
+                                                    value="{{ $getRecord->phone }}">
                                             </div>
                                         </div>
 
