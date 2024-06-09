@@ -28,4 +28,10 @@ class AlumniController extends Controller
     {
         return view('alumni.alumni_login');
     }
+
+    // Alumni Register
+    public function AlumniRegister (Request $request)
+    {
+        return view('alumni.alumni_register');
+    }
 }

@@ -51,3 +51,6 @@ Route::get('admin/login', [AdminController::class, 'AdminLogin'])->name('admin.l
 
 // Alumni Login
 Route::get('alumni/login', [AlumniController::class, 'AlumniLogin'])->name('alumni.login');
+
+// Alumni Register
+Route::get('alumni/register', [AlumniController::class, 'AlumniRegister'])->name('alumni.register');

@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ url('backend/assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ url('backend/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="{{ url('asset_pnj/logo_pnj_favicon.jpg') }}" rel="icon">
+    <link href="{{ url('asset_pnj/logo_pnj_icon.jpg') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -30,14 +30,6 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('backend/assets/css/style.css') }}" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -68,14 +60,15 @@
                                         </p>
                                     </div>
 
-                                    <form method="POST" action="{{ route('login') }}" class="row g-3 needs-validation" novalidate>
+                                    <form method="POST" action="{{ route('login') }}" class="row g-3 needs-validation"
+                                        novalidate>
                                         @csrf
                                         <div class="col-12">
                                             <label for="password" class="form-label">Email or NIM or Nomor
                                                 Telpon</label>
                                             <div class="input-group has-validation">
-                                                <input type="text" name="login" class="form-control"
-                                                    id="login" value="{{ old('login') }}" required>
+                                                <input type="text" name="login" class="form-control" id="login"
+                                                    value="{{ old('login') }}" required>
                                                 <div class="invalid-feedback">Mohon masukkan alamat email or NIM or
                                                     Nomor Telpon.</div>
                                             </div>
@@ -83,8 +76,8 @@
 
                                         <div class="col-12">
                                             <label for="password" class="form-label">Password</label>
-                                            <input type="password" name="password" class="form-control"
-                                                id="password" value="__('Password')" required>
+                                            <input type="password" name="password" class="form-control" id="password"
+                                                value="__('Password')" required>
                                             <div class="invalid-feedback">Mohon masukkan password!</div>
                                         </div>
 
@@ -97,6 +90,11 @@
                                         </div>
                                         <div class="col-12">
                                             <button class="btn btn-primary w-100" type="submit">Login</button>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <p class="small mb-0">Belum punya akun? <a
+                                                    href="{{ route('alumni.register') }}">Buat akun alumni</a></p>
                                         </div>
                                     </form>
 
