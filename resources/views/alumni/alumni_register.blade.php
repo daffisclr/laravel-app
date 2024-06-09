@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Login Alumni</title>
+    <title>Alumni Register</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -59,7 +59,9 @@
                                         <p class="text-center small">Mohon isi dengan data pribadi anda</p>
                                     </div>
 
-                                    <form class="row g-3 needs-validation" novalidate>
+                                    <form method="post" action="{{ route('register') }}"
+                                        class="row g-3 needs-validation" novalidate>
+                                        @csrf
                                         <div class="col-12">
                                             <label for="name" class="form-label">Nama Lengkap</label>
                                             <input type="text" name="name" class="form-control" id="name"
@@ -86,30 +88,22 @@
 
                                         <div class="col-12">
                                             <label for="phone" class="form-label">Nomor Telpon</label>
-                                            <input type="phone" name="name" class="form-control" id="phone"
+                                            <input type="number" name="name" class="form-control" id="phone"
                                                 required>
                                             <div class="invalid-feedback">Mohon isi nomor telpon anda!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label">Password</label>
-                                            <input type="password" name="password" class="form-control"
-                                                id="yourPassword" required>
-                                            <div class="invalid-feedback">Please enter your password!</div>
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" name="password" class="form-control" id="password"
+                                                required>
+                                            <div class="invalid-feedback">Mohon isi password anda!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" name="terms" type="checkbox"
-                                                    value="" id="acceptTerms" required>
-                                                <label class="form-check-label" for="acceptTerms">I agree and accept the
-                                                    <a href="#">terms and conditions</a></label>
-                                                <div class="invalid-feedback">You must agree before submitting.</div>
-                                            </div>
+                                            <button class="btn btn-primary w-100" type="submit">Register</button>
                                         </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">Create Account</button>
-                                        </div>
+
                                         <div class="col-12">
                                             <p class="small mb-0">Sudah punya akun? <a
                                                     href="{{ route('alumni.login') }}">Log in</a></p>

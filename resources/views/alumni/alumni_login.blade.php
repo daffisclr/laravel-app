@@ -64,7 +64,7 @@
                                         novalidate>
                                         @csrf
                                         <div class="col-12">
-                                            <label for="password" class="form-label">Email or NIM or Nomor
+                                            <label for="username" class="form-label">Email or NIM or Nomor
                                                 Telpon</label>
                                             <div class="input-group has-validation">
                                                 <input type="text" name="login" class="form-control" id="login"
